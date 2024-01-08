@@ -1,6 +1,6 @@
 package com.example.app.SpringBootFruitShop.service.User;
 
-import com.example.app.SpringBootFruitShop.entity.Fruit;
+import com.example.app.SpringBootFruitShop.entity.Match;
 import com.example.app.SpringBootFruitShop.repository.FruitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,16 +15,16 @@ public class UserFruitService {
     @Autowired
     FruitRepository repository;
 
-    public List<Fruit> getAll() {
-        Iterable<Fruit> iterable = repository.findAll();
-        List<Fruit> list =
+    public List<Match> getAll() {
+        Iterable<Match> iterable = repository.findAll();
+        List<Match> list =
                 StreamSupport.stream(iterable.spliterator(), false)
-                        .map(fruit -> new Fruit(fruit.getId(),
-                                fruit.getImg(),
-                                fruit.getName(),
-                                fruit.getArticle(),
-                                fruit.getDescr(),
-                                fruit.getPrice()))
+                        .map(match -> new Match(match.getId(),
+                                match.getImg(),
+                                match.getName(),
+                                match.getArticle(),
+                                match.getDescr(),
+                                match.getPrice()))
                         .toList();
         return new ArrayList<>(list);
     }

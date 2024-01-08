@@ -30,7 +30,7 @@ public class UserController {
 
     @GetMapping("/")
     public String getHome(Model model) {
-        model.addAttribute("title", "Fruit Shop");
+        model.addAttribute("title", "Match Shop");
         model.addAttribute("fragmentName", "home");
         return "User/layout";
     }

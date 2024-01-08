@@ -9,20 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "fruits")
-public class Fruit {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Long id;
-    @Column(name = "img")
-    String img;
-    @Column(name = "name")
-    String name;
-    @Column(name = "article")
-    String article;
-    @Column(name = "description")
-    String descr;
-    @Column(name = "price")
-    Double price;
+    @Column(name = "user_name")
+    String userName;
+    @Column(name = "user_email")
+    String userEmail;
+    @Column(name = "password")
+    String status;
 }
